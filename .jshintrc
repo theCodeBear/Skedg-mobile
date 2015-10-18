@@ -1,0 +1,11 @@
+{
+  "globalstrict": true,
+  "globals": {
+    "angular": false,
+    "window": false,
+    "cordova": false,
+    "StatusBar": false,
+    "console": false,
+    "_": false
+  }
+}
