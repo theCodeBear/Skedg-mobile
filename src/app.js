@@ -25,49 +25,84 @@ angular.module('skedg', ['ionic'])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
+  .state('splashpage', {
+    url: '/',
+    templateUrl: 'states/splashpage/splashpage.html',
+    controller: 'SplashpageCtrl'
+  })
+
+  .state('title', {
+    url: '/title',
+    templateUrl: 'states/title/title.html',
+    controller: 'TitleCtrl'
+  })
+
   .state('app', {
     url: '/app',
     abstract: true,
-    templateUrl: './templates/menu.html',
-    controller: 'AppCtrl'
+    templateUrl: 'states/menu/menu.html',
+    controller: 'MenuCtrl'
   })
 
-  .state('app.search', {
-    url: '/search',
+  .state('app.weeks', {
+    url: '/weeks',
     views: {
       'menuContent': {
-        templateUrl: './templates/search.html'
+        templateUrl: 'states/weeks/weeks.html',
+        controller: 'WeeksCtrl'
       }
     }
   })
 
-  .state('app.browse', {
-      url: '/browse',
+  .state('app.days', {
+      url: '/days',
       views: {
         'menuContent': {
-          templateUrl: './templates/browse.html'
+          templateUrl: 'states/days/days.html',
+          controller: 'DaysCtrl'
         }
       }
     })
-    .state('app.playlists', {
-      url: '/playlists',
+    .state('app.hours', {
+      url: '/hours',
       views: {
         'menuContent': {
-          templateUrl: './templates/playlists.html',
-          controller: 'PlaylistsCtrl'
+          templateUrl: 'states/hours/hours.html',
+          controller: 'HoursCtrl'
         }
       }
     })
 
-  .state('app.single', {
-    url: '/playlists/:playlistId',
+  .state('app.account', {
+    url: '/account',
     views: {
       'menuContent': {
-        templateUrl: './templates/playlist.html',
-        controller: 'PlaylistCtrl'
+        templateUrl: 'states/account/account.html',
+        controller: 'AccountCtrl'
+      }
+    }
+  })
+
+  .state('app.quickView', {
+    url: '/quickview',
+    views: {
+      'menuContent': {
+        templateUrl: 'states/quickView/quickView.html',
+        controller: 'QuickViewCtrl'
+      }
+    }
+  })
+
+  .state('app.contacts', {
+    url: '/contacts',
+    views: {
+      'menuContent': {
+        templateUrl: 'states/contacts/contacts.html',
+        controller: 'ContactsCtrl'
       }
     }
   });
+
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/');
 });
