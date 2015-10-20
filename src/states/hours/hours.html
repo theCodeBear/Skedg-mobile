@@ -1,5 +1,12 @@
 <ion-view view-title='Hours'>
   <ion-content>
-    <h1>Hours</h1>
+    <h1 class='text-center'>{{vmHours.day | date:'EEEE MMM d'}}</h1>
+    <div class="list">
+      <label class="item item-input item-stacked-label" ng-repeat='num in vmHours.nums track by $index'>
+        <span class="input-label hours-label">{{num}}</span>
+        <textarea msd-elastic ng-model='blah' rows='1' class='hour-inputs'></textarea>
+      </label>
+    </div>
+    </ul>
   </ion-content>
 </ion-view>
