@@ -1,8 +1,8 @@
 <ion-view view-title="Days">
   <ion-content>
     <ul class='list full-height'>
-      <li class='item days-items' ng-repeat='day in vmDays.days'>
-        {{day}}
+      <li class='item days-items' ng-repeat='day in vmDays.days' ng-click='vmDays.goToHours(vmDays.startOfWeek, $index)'>
+        {{day | dateDisplay:true}}
       </li>
     </ul>
   </ion-content>

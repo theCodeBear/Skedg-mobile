@@ -4,18 +4,19 @@ angular.module('skedg')
 
 .controller('DaysCtrl', DaysCtrl);
 
-DaysCtrl.$inject = ['$stateParams'];
+DaysCtrl.$inject = ['$stateParams', '$state'];
 
-function DaysCtrl($stateParams) {
+function DaysCtrl($stateParams, $state) {
 
   let vmDays = this;
 
 // LOCAL VARIABLES
   let week = $stateParams.week;
-  let startOfWeek = moment().add(week, 'weeks')._d;
 
 // VIEW-MODEL (SCOPE) VARIABLES
-  vmDays.days = initDays(startOfWeek);
+  vmDays.startOfWeek = moment().add(week, 'weeks')._d;
+  vmDays.days = initDays(vmDays.startOfWeek);
+  vmDays.goToHours = goToHours;
 
 
 // FUNCTION ASSIGNMENTS
@@ -24,25 +25,21 @@ function DaysCtrl($stateParams) {
 // CONTROLLER EXECUTION
 
 
-
 // LOCAL FUNCTION DEFINITIONS
   function initDays(monday) {
     let tempArr = [];
     for (let day=0; day < 7; day++) {
-      let longFormDay = moment().add(day, 'days')
-      tempArr.push(formatDayDisplay(longFormDay));
+      tempArr.push(moment(monday).add(day, 'days'));
     }
     return tempArr;
   }
 
-  function formatDayDisplay(day) {
-    let dayInWeekNum = moment(day).day();
-    let dayInWeekStr = moment().isoWeekday(dayInWeekNum).format('dddd');
-    let dayAndMonth = moment(day).format('MMM DD');
-    return `${dayInWeekStr} ${dayAndMonth}`;
-  }
-
 // VM FUNCTION DEFINITIONS
-
+function goToHours(monday, index) {
+  console.log('gotohours', monday, index);
+  let chosenDay = moment(monday).add(index, 'days')._d;
+  chosenDay = moment(chosenDay).dayOfYear();
+  $state.go('app.hours', {day:chosenDay});
+}
 
 }

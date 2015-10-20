@@ -64,7 +64,7 @@ angular.module('skedg', ['ionic'])
       }
     })
     .state('app.hours', {
-      url: '/hours',
+      url: '/hours/:day',
       views: {
         'menuContent': {
           templateUrl: 'states/hours/hours.html',

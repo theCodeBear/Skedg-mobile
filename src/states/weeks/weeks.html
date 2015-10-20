@@ -2,7 +2,7 @@
   <ion-content>
     <ul class='list'>
       <li class='item week-items' ng-repeat='week in vmWeeks.fullYearOfWeeks' ui-sref='app.days({week: $index})'>
-        {{week.start}} - {{week.end}}
+        {{week.start | dateDisplay}} - {{week.end | dateDisplay}}
       </li>
     </ul>
   </ion-content>

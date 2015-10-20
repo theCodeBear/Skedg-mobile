@@ -30,9 +30,9 @@ function WeeksCtrl() {
 // LOCAL FUNCTION DEFINITIONS
   function getWeek(monday) {
     let week = { start: '', end: '' };
-    week.start = moment(monday).format('MMM D');
+    week.start = moment(monday)._d;
     let endOfWeek = moment(monday).add(6, 'days')._d;
-    week.end = moment(endOfWeek).format('MMM D');
+    week.end = moment(endOfWeek)._d;
     return week;
   }
 
