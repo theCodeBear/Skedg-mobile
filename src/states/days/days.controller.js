@@ -11,10 +11,10 @@ function DaysCtrl($stateParams, $state) {
   let vmDays = this;
 
 // LOCAL VARIABLES
-  let week = $stateParams.week;
+  let week = moment().add($stateParams.week, 'weeks')._d;
 
 // VIEW-MODEL (SCOPE) VARIABLES
-  vmDays.startOfWeek = moment().add(week, 'weeks')._d;
+  vmDays.startOfWeek = moment(week).startOf('week');
   vmDays.days = initDays(vmDays.startOfWeek);
   vmDays.goToHours = goToHours;
 

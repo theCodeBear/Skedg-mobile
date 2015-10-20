@@ -12,8 +12,7 @@ function WeeksCtrl() {
 
 
 // LOCAL VARIABLES
-  let currentWeek = moment().week();
-  let startOfThisWeek = moment().week(currentWeek)._d;   // monday of this week
+  let startOfThisWeek = moment().startOf('week');
 
 
 // VIEW-MODEL (SCOPE) VARIABLES
@@ -37,11 +36,11 @@ function WeeksCtrl() {
     return week;
   }
 
-  function get52Weeks(firstMonday) {
+  function get52Weeks(firstDate) {
     let yearOfWeeks = [];
-    for (let week=1, monday=firstMonday; week <= 52; week++) {
-      yearOfWeeks.push(getWeek(monday));
-      monday = moment(firstMonday).add(week, 'week');
+    for (let week=1, day=firstDate; week <= 52; week++) {
+      yearOfWeeks.push(getWeek(day));
+      day = moment(firstDate).add(week, 'week');
     }
     return yearOfWeeks;
   }
