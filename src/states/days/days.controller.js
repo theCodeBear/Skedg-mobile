@@ -29,14 +29,14 @@ function DaysCtrl($stateParams, $state) {
   function initDays(monday) {
     let tempArr = [];
     for (let day=0; day < 7; day++) {
-      tempArr.push(moment(monday).add(day, 'days'));
+      let theDay = moment(monday).add(day, 'days');
+      tempArr.push(moment(theDay).format('x'));
     }
     return tempArr;
   }
 
 // VM FUNCTION DEFINITIONS
 function goToHours(monday, index) {
-  console.log('gotohours', monday, index);
   let chosenDay = moment(monday).add(index, 'days')._d;
   chosenDay = moment(chosenDay).dayOfYear();
   $state.go('app.hours', {day:chosenDay});
