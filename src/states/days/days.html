@@ -1,6 +1,9 @@
 <ion-view view-title="Days">
   <ion-content>
-    <ul class='list full-height'>
+    <div class='weekly-note'>
+      <input type='text' class='weekly-note-input' placeholder='Weekly Note'>
+    </div>
+    <ul class='list day-items-list'>
       <li class='item days-items' ng-repeat='day in vmDays.days' ng-click='vmDays.goToHours(vmDays.startOfWeek, $index)'>
         {{day | date:"EEEE MMM d"}}
       </li>

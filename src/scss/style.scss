@@ -1,3 +1,5 @@
+$weekly-note-height: 49px;
+
 .app-title {
   font-size: 2em;
   text-align: center;
@@ -11,19 +13,52 @@
   text-align: center;
 }
 
+.weekly-note {
+  height: $weekly-note-height;
+}
+
+.weekly-note-input {
+  height: 100% !important;
+  width: 100%;
+  font-size: 1.3em !important;
+  padding: 5px !important;
+  border-bottom: 2px solid lightgray !important;
+
+  &::-webkit-input-placeholder {
+    font-size: 1.3em;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+    font-size: 1.3em;
+  }
+
+  &::-moz-placeholder {  /* Firefox 19+ */
+    font-size: 1.3em;
+  }
+
+  &:-ms-input-placeholder {
+    font-size: 1.3em;
+  }
+}
+
+.day-items-list {
+  height: calc(100% - #{$weekly-note-height});
+}
+
 .days-items {
   text-align: center;
   font-size: 1.5em;
   height: percentage(1/7);
 }
 
-.full-height {
-  height: 100%;
-}
+//.full-height {
+  //height: 100%;
+//}
 
 .hour-inputs {
   resize: none;
   font-size: 1.2em;
+  line-height: 1.1em;
 }
 
 .hours-label {
