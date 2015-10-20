@@ -1,5 +1,9 @@
 <ion-view view-title="Days">
   <ion-content>
-    <h1>Days</h1>
+    <ul class='list full-height'>
+      <li class='item days-items' ng-repeat='day in vmDays.days'>
+        {{day}}
+      </li>
+    </ul>
   </ion-content>
 </ion-view>

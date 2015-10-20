@@ -1,0 +1,22 @@
+.app-title {
+  font-size: 2em;
+  text-align: center;
+  padding-top: 3em;
+}
+
+.week-items {
+  padding-top: 35px;
+  padding-bottom: 35px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.days-items {
+  text-align: center;
+  font-size: 1.5em;
+  height: percentage(1/7);
+}
+
+.full-height {
+  height: 100%;
+}

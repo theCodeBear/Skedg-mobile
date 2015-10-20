@@ -8,4 +8,6 @@ ContactsCtrl.$inject = [];
 
 function ContactsCtrl() {
 
+  let vmContacts = this;
+
 }

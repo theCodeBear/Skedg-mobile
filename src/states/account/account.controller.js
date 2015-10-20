@@ -8,4 +8,6 @@ AccountCtrl.$inject = [];
 
 function AccountCtrl() {
 
+  let vmAccount = this;
+
 }

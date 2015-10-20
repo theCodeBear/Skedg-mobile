@@ -8,4 +8,6 @@ HoursCtrl.$inject = [];
 
 function HoursCtrl() {
 
+  let vmHours = this;
+
 }

@@ -28,20 +28,20 @@ angular.module('skedg', ['ionic'])
   .state('splashpage', {
     url: '/',
     templateUrl: 'states/splashpage/splashpage.html',
-    controller: 'SplashpageCtrl'
+    controller: 'SplashpageCtrl as vmSplash'
   })
 
   .state('title', {
     url: '/title',
     templateUrl: 'states/title/title.html',
-    controller: 'TitleCtrl'
+    controller: 'TitleCtrl as vmTitle'
   })
 
   .state('app', {
     url: '/app',
     abstract: true,
     templateUrl: 'states/menu/menu.html',
-    controller: 'MenuCtrl'
+    controller: 'MenuCtrl as vmMenu'
   })
 
   .state('app.weeks', {
@@ -49,17 +49,17 @@ angular.module('skedg', ['ionic'])
     views: {
       'menuContent': {
         templateUrl: 'states/weeks/weeks.html',
-        controller: 'WeeksCtrl'
+        controller: 'WeeksCtrl as vmWeeks'
       }
     }
   })
 
   .state('app.days', {
-      url: '/days',
+      url: '/days/:week',
       views: {
         'menuContent': {
           templateUrl: 'states/days/days.html',
-          controller: 'DaysCtrl'
+          controller: 'DaysCtrl as vmDays'
         }
       }
     })
@@ -68,7 +68,7 @@ angular.module('skedg', ['ionic'])
       views: {
         'menuContent': {
           templateUrl: 'states/hours/hours.html',
-          controller: 'HoursCtrl'
+          controller: 'HoursCtrl as vmHours'
         }
       }
     })
@@ -78,7 +78,7 @@ angular.module('skedg', ['ionic'])
     views: {
       'menuContent': {
         templateUrl: 'states/account/account.html',
-        controller: 'AccountCtrl'
+        controller: 'AccountCtrl as vmAccount'
       }
     }
   })
@@ -88,7 +88,7 @@ angular.module('skedg', ['ionic'])
     views: {
       'menuContent': {
         templateUrl: 'states/quickView/quickView.html',
-        controller: 'QuickViewCtrl'
+        controller: 'QuickViewCtrl as vmQuickView'
       }
     }
   })
@@ -98,7 +98,7 @@ angular.module('skedg', ['ionic'])
     views: {
       'menuContent': {
         templateUrl: 'states/contacts/contacts.html',
-        controller: 'ContactsCtrl'
+        controller: 'ContactsCtrl as vmContacts'
       }
     }
   });

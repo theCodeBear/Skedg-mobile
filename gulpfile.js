@@ -10,7 +10,8 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     copy = require('gulp-copy'),
     del = require('del'),
-    inject = require('gulp-inject');
+    inject = require('gulp-inject'),
+    sourcemaps = require('gulp-sourcemaps');
 
 var paths = {
   sass: ['./src/scss/**/*.scss'],
@@ -44,7 +45,9 @@ gulp.task('jshint', ['babel'], function() {
 
 gulp.task('babel', ['clean-js'], function() {
   gulp.src(paths.js)
+    .pipe(sourcemaps.init())
     .pipe(babel())
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./www'));
 });
 

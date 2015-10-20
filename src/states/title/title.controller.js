@@ -8,4 +8,6 @@ TitleCtrl.$inject = [];
 
 function TitleCtrl() {
 
+  let vmTitle = this;
+
 }

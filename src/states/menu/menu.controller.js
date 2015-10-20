@@ -13,6 +13,7 @@ function MenuCtrl() {
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
+  let vmMenu = this;
 
 }
 
