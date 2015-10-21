@@ -51,10 +51,6 @@ $weekly-note-height: 49px;
   height: percentage(1/7);
 }
 
-//.full-height {
-  //height: 100%;
-//}
-
 .hour-inputs {
   resize: none;
   font-size: 1.2em;
@@ -69,3 +65,12 @@ $weekly-note-height: 49px;
   background-color: lightgray;
   color: gray;
 }
+
+
+.save-plans-button {
+  font-size: 1.5em;
+  font-weight: 200;
+}
+
+
+

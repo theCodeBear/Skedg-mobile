@@ -1,13 +1,14 @@
 <ion-view view-title="{{vmHours.day | date:'EEEE MMM d'}}" align-title='center'>
   <ion-content>
+    <button type='button' class='button button-positive button-block save-plans-button' ng-click='vmHours.updatePlans(vmHours.plans)'>Save Changes</button>
     <div class="list">
       <label class="item item-input item-stacked-label" ng-repeat='time in vmHours.timesOfDay track by $index' ng-if='!vmHours.isPastTime($index)'>
-        <span class="input-label hours-label">{{time}}</span>
-        <textarea msd-elastic ng-model='bloop' rows='1' class='hour-inputs'></textarea>
+        <span class="input-label hours-label">{{time | capitalize}}</span>
+        <textarea msd-elastic ng-model='vmHours.plans[time]' rows='1' class='hour-inputs'></textarea>
       </label>
       <label class="item item-input item-stacked-label" ng-repeat='hour in vmHours.hours track by $index' ng-class='{"disabled-list-item":vmHours.isHourInPast(hour)}' ng-disabled='vmHours.isHourInPast(hour)' ng-if='!vmHours.isHourInPast(hour)'>
         <span class="input-label hours-label">{{hour | hours}}</span>
-        <textarea msd-elastic ng-model='blah' rows='1' class='hour-inputs'></textarea>
+        <textarea msd-elastic ng-model='vmHours.plans[hour]' rows='1' class='hour-inputs'></textarea>
       </label>
     </div>
     </ul>
