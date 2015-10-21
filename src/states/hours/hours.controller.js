@@ -18,7 +18,7 @@ function HoursCtrl($stateParams, $ionicHistory, Plan, _) {
   vmHours.isHourInPast = isHourInPast;
   vmHours.isPastTime = isPastTime;
   vmHours.updatePlans = updatePlans;
-  let thisDaysPlans = _.get(Plan.get(), moment(vmHours.day).format('MM_DD_YYYY'));
+  let thisDaysPlans = _.find(Plan.get(), {date: moment(vmHours.day).startOf('day')._d});
 
 
 // FUNCTION ASSIGNMENTS
