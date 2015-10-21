@@ -101,6 +101,16 @@ angular.module('skedg', ['ionic', 'monospaced.elastic'])
         controller: 'ContactsCtrl as vmContacts'
       }
     }
+  })
+
+  .state('app.recentPlans', {
+    url: '/recentPlans',
+    views: {
+      'menuContent': {
+        templateUrl: 'states/recentPlans/recentPlans.html',
+        controller: 'RecentPlansCtrl as vmRecent'
+      }
+    }
   });
 
   // if none of the above states are matched, use this as the fallback

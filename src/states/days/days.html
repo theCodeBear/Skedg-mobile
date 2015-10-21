@@ -4,7 +4,7 @@
       <input type='text' class='weekly-note-input' placeholder='Weekly Note'>
     </div>
     <ul class='list day-items-list'>
-      <li class='item days-items' ng-repeat='day in vmDays.days' ng-click='vmDays.goToHours(vmDays.startOfWeek, $index)'>
+      <li class='item days-items' ng-repeat='day in vmDays.days' ng-click='vmDays.goToHours(vmDays.startOfWeek, $index)' ng-class='{"disabled-list-item": vmDays.dateInThePast(day)}' ng-disabled='vmDays.dateInThePast(day)'>
         {{day | date:"EEEE MMM d"}}
       </li>
     </ul>

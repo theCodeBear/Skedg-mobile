@@ -17,6 +17,7 @@ function DaysCtrl($stateParams, $state) {
   vmDays.startOfWeek = moment(week).startOf('week');
   vmDays.days = initDays(vmDays.startOfWeek);
   vmDays.goToHours = goToHours;
+  vmDays.dateInThePast = dateInThePast;
 
 
 // FUNCTION ASSIGNMENTS
@@ -40,6 +41,10 @@ function goToHours(monday, index) {
   let chosenDay = moment(monday).add(index, 'days')._d;
   chosenDay = moment(chosenDay).dayOfYear();
   $state.go('app.hours', {day:chosenDay});
+}
+
+function dateInThePast(day) {
+  return day < moment().startOf('day');
 }
 
 }

@@ -2,16 +2,16 @@
 
 angular.module('skedg')
 
-.controller('QuickViewCtrl', QuickViewCtrl);
+.controller('RecentPlansCtrl', RecentPlansCtrl);
 
-QuickViewCtrl.$inject = [];
+RecentPlansCtrl.$inject = [];
 
-function QuickViewCtrl() {
+function RecentPlansCtrl() {
 
-  let vmQuickView = this;
+  let vmRecent = this;
+
 
 // LOCAL VARIABLES
-
 
 
 // VIEW-MODEL (SCOPE) VARIABLES
