@@ -55,8 +55,10 @@ function HoursCtrl($stateParams, $ionicHistory, Plan, _) {
     for (var prop in plans) {
       if (!plans[prop]) delete plans[prop];
     }
-    const thisDay = moment(vmHours.day).format('MM_DD_YYYY');
-    Plan.set(plans, thisDay);
+    // const thisDay = moment(vmHours.day).format('MM_DD_YYYY');
+    const thisDay = moment(vmHours.day).startOf('day');
+    plans.date = thisDay;
+    Plan.set(plans);
     $ionicHistory.goBack();
   }
 

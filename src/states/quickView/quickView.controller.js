@@ -4,24 +4,24 @@ angular.module('skedg')
 
 .controller('QuickViewCtrl', QuickViewCtrl);
 
-QuickViewCtrl.$inject = [];
+QuickViewCtrl.$inject = ['$scope', '$state', 'Plan'];
 
-function QuickViewCtrl() {
+function QuickViewCtrl($scope, $state, Plan) {
 
   let vmQuickView = this;
 
-// LOCAL VARIABLES
 
-
-
-// VIEW-MODEL (SCOPE) VARIABLES
-
+// VARIABLES
+  vmQuickView.plans = Plan.get();
 
 // FUNCTION ASSIGNMENTS
-
+  vmQuickView.goToDate = (date) => $state.go('app.hours', {day: moment(date).dayOfYear()});
 
 // CONTROLLER EXECUTION
-
+  $scope.$on('$ionicView.enter', (e) => {
+    // vmQuickView.plans = Plan.get();
+    // console.log('upcoming plans', vmQuickView.plans);
+  });
 
 // LOCAL FUNCTION DEFINITIONS
 

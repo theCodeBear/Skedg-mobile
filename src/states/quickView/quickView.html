@@ -1,5 +1,17 @@
-<ion-view view-title="QuickView">
+<ion-view view-title="Upcoming Plans">
   <ion-content>
-    <h1>QuickView</h1>
+    <ul class='list'>
+      <li ng-repeat='plan in vmQuickView.plans | orderBy:plan.date'>
+        <div class="card" ng-click='vmQuickView.goToDate(plan.date)'>
+          <div class="item item-divider">
+            {{ plan.date | date }}
+          </div>
+          <div class="item item-text-wrap" ng-repeat='(key, prop) in plan' ng-if='key != "date"'>
+            <div class='quickview-time'>{{key | capitalize | hours }}</div>
+            <div class='quickview-plan'>{{prop}}</div>
+          </div>
+        </div>
+      </li>
+    </ul>
   </ion-content>
 </ion-view>

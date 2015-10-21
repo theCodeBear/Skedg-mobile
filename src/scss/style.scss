@@ -72,5 +72,25 @@ $weekly-note-height: 49px;
   font-weight: 200;
 }
 
+.quickview-dates {
+  background-color: lightgray;
+  color: black;
+  font-weight: bold !important;
+  margin-bottom: 0 !important;
+  padding: 10px;
+}
+
+.item-divider {
+  background-color: #4CF;
+}
+
+.quickview-time {
+  font-size: 1.2em;
+  color: black;
+}
+
+.quickview-plan {
+  padding: 10px 10px 10px 20px;
+}
 
 
