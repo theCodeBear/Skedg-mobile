@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "moment": "~2.10.6",
-    "angular-elastic": "~2.5.1"
+    "angular-elastic": "~2.5.1",
+    "lodash": "~3.10.1"
   }
 }
