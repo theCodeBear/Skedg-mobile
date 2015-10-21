@@ -3,9 +3,41 @@
     <div class='app-title'>
       <h1>Skedg</h1>
     </div>
-    <p class='text-center'>The group scheduler you won't want to miss!</p>
-    <input type='tel' placeholder='Phone Number'>
-    <input type='email' placeholder='Email Address'>
-    <a ui-sref='app.weeks'>Enter the app</a>
+    <p class='text-center app-subtitle'>The group scheduler you won't want to miss!</p>
+
+    <!-- <div class="list">
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          <input type='tel' class='text-center' ng-model='vmTitle.user.phone' placeholder='Phone Number'>
+        </label>
+        <button class="button button-small">
+          Save
+        </button>
+      </div>
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          <input type='email' class='text-center' ng-model='vmTitle.user.email' placeholder='Email Address'>
+        </label>
+        <button class="button button-small">
+          Save
+        </button>
+      </div>
+    </div> -->
+
+    <div class='text-center'>
+      Allow other users to make plans with you
+    </div>
+    <div class='row title-page-input-container' ng-if='!vmTitle.phoneSaved()'>
+      <input type='tel' class='text-center title-page-input' ng-model='vmTitle.user.phone' placeholder='Phone Number'>
+      <button type='button' class='button button-positive button-small title-page-save-button' ng-click='vmTitle.savePhone(vmTitle.user.phone)'>Save</button>
+    </div>
+    <div class='row title-page-input-container' ng-if='!vmTitle.emailSaved()'>
+      <input type='email' class='text-center title-page-input' ng-model='vmTitle.user.email' placeholder='Email Address'>
+      <button type='button' class='button button-positive button-small title-page-save-button' ng-click='vmTitle.saveEmail(vmTitle.user.email)'>Save</button>
+    </div>
+
+    <div class='text-center'>
+      <a ui-sref='app.weeks'>Enter the app</a>
+    </div>
   </ion-content>
 </ion-view>

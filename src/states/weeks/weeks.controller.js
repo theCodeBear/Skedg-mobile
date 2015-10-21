@@ -11,11 +11,8 @@ function WeeksCtrl() {
   let vmWeeks = this;
 
 
-// LOCAL VARIABLES
+// VARIABLES
   let startOfThisWeek = moment().startOf('week');
-
-
-// VIEW-MODEL (SCOPE) VARIABLES
   vmWeeks.fullYearOfWeeks = [];
 
 // FUNCTION ASSIGNMENTS
