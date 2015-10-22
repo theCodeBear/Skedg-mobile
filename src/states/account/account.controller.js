@@ -4,9 +4,9 @@ angular.module('skedg')
 
 .controller('AccountCtrl', AccountCtrl);
 
-AccountCtrl.$inject = ['$window'];
+AccountCtrl.$inject = ['$scope', '$window'];
 
-function AccountCtrl($window) {
+function AccountCtrl($scope, $window) {
 
   let vmAccount = this;
 
@@ -14,15 +14,16 @@ function AccountCtrl($window) {
 // VARIABLES
   vmAccount.phone = $window.localStorage.getItem('skedgPhone');
   vmAccount.email = $window.localStorage.getItem('skedgEmail');
-  vmAccount.editingPhone = false;
-  vmAccount.editingEmail = false;
 
 // FUNCTION ASSIGNMENTS
   vmAccount.phoneButton = phoneButton;
   vmAccount.emailButton = emailButton;
 
 // CONTROLLER EXECUTION
-
+  $scope.$on('$ionicView.enter', (e) => {
+    vmAccount.editingPhone = false;
+    vmAccount.editingEmail = false;
+  });
 
 // LOCAL FUNCTION DEFINITIONS
 
