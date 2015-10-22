@@ -1,9 +1,31 @@
 <ion-view view-title="Account">
   <ion-content>
-    <h1>Account</h1>
 
-    Your Phone Number {{ vmAccount.phone }}
-    <br>
-    Your Email Address {{ vmAccount.email }}
+    <div class="card">
+      <div class="item item-divider text-center">
+        Phone Number
+      </div>
+      <div class="item item-text-wrap no-border" ng-class='{"gray-back": !vmAccount.editingPhone}'>
+        <input type='tel' class='clear-back full-width text-center' ng-model='vmAccount.phone' ng-disabled='!vmAccount.editingPhone'>
+      </div>
+      <div class="item item-divider text-center no-border account-button" ng-class='{"gold-back": vmAccount.editingPhone}' ng-click='vmAccount.phoneButton()'>
+        <span ng-if='!vmAccount.editingPhone'>Edit</span>
+        <span ng-if='vmAccount.editingPhone'>Save</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="item item-divider text-center">
+        Email Address
+      </div>
+      <div class="item item-text-wrap no-border" ng-class='{"gray-back": !vmAccount.editingEmail}'>
+        <input type='email' class='clear-back full-width text-center' ng-model='vmAccount.email' ng-disabled='!vmAccount.editingEmail'>
+      </div>
+      <div class="item item-divider text-center no-border account-button" ng-class='{"gold-back": vmAccount.editingEmail}' ng-click='vmAccount.emailButton()'>
+        <span ng-if='!vmAccount.editingEmail'>Edit</span>
+        <span ng-if='vmAccount.editingEmail'>Save</span>
+      </div>
+    </div>
+
   </ion-content>
 </ion-view>

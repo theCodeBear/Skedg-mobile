@@ -90,6 +90,10 @@ $weekly-note-height: 49px;
   font-weight: 200;
 }
 
+.quickview-cards {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.9) !important;
+}
+
 .quickview-dates {
   background-color: lightgray;
   color: black;
@@ -109,6 +113,30 @@ $weekly-note-height: 49px;
 
 .quickview-plan {
   padding: 10px 10px 10px 20px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.clear-back {
+  background-color: transparent !important;
+}
+
+.gray-back {
+  background-color: lightgray !important;
+}
+
+.gold-back {
+  background-color: goldenrod !important;
+}
+
+.no-border {
+  border: none !important;
+}
+
+.account-button.activated {
+  background-color: green !important;
 }
 
 

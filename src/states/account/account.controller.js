@@ -14,9 +14,12 @@ function AccountCtrl($window) {
 // VARIABLES
   vmAccount.phone = $window.localStorage.getItem('skedgPhone');
   vmAccount.email = $window.localStorage.getItem('skedgEmail');
+  vmAccount.editingPhone = false;
+  vmAccount.editingEmail = false;
 
 // FUNCTION ASSIGNMENTS
-
+  vmAccount.phoneButton = phoneButton;
+  vmAccount.emailButton = emailButton;
 
 // CONTROLLER EXECUTION
 
@@ -25,6 +28,21 @@ function AccountCtrl($window) {
 
 
 // VM FUNCTION DEFINITIONS
+  function phoneButton() {
+    // if button is for saving
+    if (vmAccount.editingPhone) {
+      $window.localStorage.setItem('skedgPhone', vmAccount.phone);
+    }
+    vmAccount.editingPhone = !vmAccount.editingPhone;
+  }
+
+  function emailButton() {
+    // if button is for saving
+    if (vmAccount.editingEmail) {
+      $window.localStorage.setItem('skedgEmail', vmAccount.email);
+    }
+    vmAccount.editingEmail = !vmAccount.editingEmail;
+  }
 
 
 }

@@ -12,17 +12,17 @@ function Plan( _ ) {
   let plans = [
     {
       afternoon: 'get ready to trick or treat',
-      date: moment('10/31/2015')._d,
+      date: moment('10/31/2015', 'MM/DD/YYYY')._d,
       night: 'halloween night!'
     },
     {
       '11': 'right now',
-      date: moment('10/21/2015')._d,
+      date: moment('10/21/2015', 'MM/DD/YYYY')._d,
       night: 'tonight'
     },
     {
       '12': 'high noon tomorrow',
-      date: moment('10/22/2015')._d
+      date: moment('10/22/2015', 'MM/DD/YYYY')._d
     }
   ];
 

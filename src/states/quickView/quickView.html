@@ -2,8 +2,8 @@
   <ion-content>
     <ul class='list'>
       <li ng-repeat='plan in vmQuickView.plans | orderByDate:"date"'>
-        <div class="card" ng-click='vmQuickView.goToDate(plan.date)'>
-          <div class="item item-divider">
+        <div class="card quickview-cards" ng-click='vmQuickView.goToDate(plan.date)'>
+          <div class="item item-divider item-divider">
             {{ plan.date | date }}
           </div>
           <div class="item item-text-wrap" ng-repeat='(key, prop) in plan' ng-if='key != "date"'>
